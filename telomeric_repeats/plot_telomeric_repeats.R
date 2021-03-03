@@ -9,7 +9,7 @@ p1 <- telomeric_repeats %>% filter(chr %in% c("I", "II", "III", "IV", "V", "X"))
   facet_grid(~chr, scales="free") + 
   theme_bw() + 
   ylim(0, 90) + 
-  xlab("Genome position (Mb)") + 
+  theme(axis.title.x=element_blank()) + 
   ylab("Count") + 
   ggtitle(expression(~italic("C. briggsae")~'QX1410')) + 
   theme(plot.margin = unit(c(0.1,0.1,0.1,0.1), "cm")) + 
@@ -22,7 +22,7 @@ p2 <- telomeric_repeats %>% filter(chr %in% c("I", "II", "III", "IV", "V", "X"))
   facet_grid(~chr, scales="free") + 
   theme_bw() + 
   ylim(0, 90) + 
-  xlab("Genome position (Mb)") + 
+  theme(axis.title.x=element_blank()) + 
   ylab("Count") + 
   ggtitle(expression(~italic("C. briggsae")~'VX34')) + 
   theme(plot.margin = unit(c(0.1,0.1,0.1,0.1), "cm")) + 
@@ -35,7 +35,7 @@ p3 <- telomeric_repeats %>% filter(chr %in% c("I", "II", "III", "IV", "V", "X"))
   facet_grid(~chr, scales="free") + 
   theme_bw() + 
   ylim(0, 90) + 
-  xlab("Genome position (Mb)") + 
+  theme(axis.title.x=element_blank()) +
   ylab("Count") +
   ggtitle(expression(~italic("C. briggsae")~'AF16 (PRJNA10731)')) + 
   theme(plot.margin = unit(c(0.1,0.1,0.1,0.1), "cm")) + 
@@ -56,5 +56,5 @@ p4 <- telomeric_repeats %>% filter(chr %in% c("I", "II", "III", "IV", "V", "X"))
 
 # plot
 p <- grid.arrange(p1, p2, p3, p4, nrow = 4)
-ggsave("telomeric_repeat_distribution.pdf", plot = p, width = 13.68, height = 9.26, units = "in")
-ggsave("telomeric_repeat_distribution.png", plot = p, width = 13.68, height = 9.26, units = "in")
+ggsave("telomeric_repeat_distribution.pdf", plot = p, width = 14, height = 11, units = "in")
+ggsave("telomeric_repeat_distribution.png", plot = p, width = 14, height = 11, units = "in")
